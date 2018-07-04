@@ -11,23 +11,23 @@ Experience
 -------------
 ### 1. Create driver
 Right-click in Solution Explorer and execute "Create Driver".
-(img)
+<br>(img)<br>
 Select the application to be operated. Here, please select Demo.
-(img)
+<br>(img)<br>
 A driver for the currently opened screen is generated.
-(img)
+<br>(img)<br>
 Also create a driver for the modal dialog.
-(img)
+<br>(img)<br>
 
 Applications selected for operation here are memorized and used next time. To change, please execute "Select Target".
-(img)
+<br>(img)<br>
 
 ### 2. Check driver
 Right click on any C # code of the Driver project and execute "Check Driver". You can highlight the control corresponding to each line.
-(img)
+<br>(img)<br>
 
 To finish, execute "End Check Driver".
-(img)
+<br>(img)<br>
 
 It is also possible to change to a highly readable name here. If you change the number of lines, please exit once and execute "Check Driver" again.
 
@@ -113,7 +113,7 @@ namespace DriverInTarget
     }
 }
 ```
-(gif)
+<br>(gif)<br>
 
 
 
