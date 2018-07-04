@@ -3,13 +3,13 @@ It is a sample to experience Test.AssistantPro in the WinForms application.
 
 Preparation
 -------------
-1. Open and Debug build DemoApp/DemoApp.sln
-2. Open and Debug build Scenario/Scenario.sln
-3. Start DemoApp from DemoApp/bin/Debug/DemoApp.exe
+##### 1. Open and Debug build DemoApp/DemoApp.sln
+##### 2. Open and Debug build Scenario/Scenario.sln
+##### 3. Start DemoApp from DemoApp/bin/Debug/DemoApp.exe
 
 Experience
 -------------
-1. Create driver
+### 1. Create driver
 Right-click in Solution Explorer and execute "Create Driver".
 (img)
 Select the application to be operated. Here, please select Demo.
@@ -22,7 +22,7 @@ Also create a driver for the modal dialog.
 Applications selected for operation here are memorized and used next time. To change, please execute "Select Target".
 (img)
 
-2. Check driver
+### 2. Check driver
 Right click on any C # code of the Driver project and execute "Check Driver". You can highlight the control corresponding to each line.
 (img)
 
@@ -31,12 +31,12 @@ To finish, execute "End Check Driver".
 
 It is also possible to change to a highly readable name here. If you change the number of lines, please exit once and execute "Check Driver" again.
 
-3. Start Capture
+### 3. Start Capture
 Right-click within CaptureTest function of Test.cs of Scenario project and execute "Start Capture".
 The operation method is generated with the code using the driver.
 (gif)
 
-4. Advanced operation
+### 4. Advanced operation
 First we have to learn about Friendly.
 [Friendly.Windows](https://github.com/Codeer-Software/Friendly.Windows "Title")
 
