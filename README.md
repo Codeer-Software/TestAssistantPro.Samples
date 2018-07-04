@@ -22,7 +22,7 @@ Status
   <td align="center">Start Capture</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
-  <td align="center">〇<td>
+  <td align="center">〇</td>
 </tr>
 <tr>
   <td align="center">Create Driver</td>
