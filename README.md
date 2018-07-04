@@ -9,6 +9,39 @@ How to use samples
 -------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms "Title")
 
+Feature
+-------------
+<table>
+<tr>
+  <th><center></center></th>
+  <th><center>Win32</center></th>
+  <th><center>WinForms</center></th>
+  <th><center>WPF</center></th>
+</tr>
+<tr>
+  <td><center>Start Capture</center></td>
+  <td><center>〇</center></td>
+  <td><center>〇</center></td>
+  <td><center>〇</center></td>
+</tr>
+<tr>
+  <td><center>Create Driver</center></td>
+  <td><center>TODO</center></td>
+  <td><center>〇</center></td>
+  <td><center>TODO</center></td>
+</tr>
+<tr>
+  <td><center>Check Driver</center></td>
+  <td><center>〇</center></td>
+  <td><center>〇</center></td>
+  <td><center>〇</center></td>
+</tr>
+<tr>
+  <td><center>with Using AI...</center></td>
+  <td colspan=3><center>TODO</center></td>
+</tr>
+</table>
+
 Summary 
 =============
 
