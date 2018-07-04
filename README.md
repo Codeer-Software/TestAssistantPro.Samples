@@ -9,7 +9,7 @@ How to use samples
 -------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms "Title")
 
-Feature
+Status
 -------------
 <table>
 <tr>
