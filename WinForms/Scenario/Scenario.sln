@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenario", "Scenario.csproj", "{AD5CA4D0-DAEC-4B24-88EC-407D8EFAFE6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver", "..\Driver\Driver.csproj", "{D988BC18-1269-4EAB-A0EF-77CF02445CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverInTarget", "..\DriverInTarget\DriverInTarget.csproj", "{B1FF7E75-9342-4984-A60F-188F19004D35}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD5CA4D0-DAEC-4B24-88EC-407D8EFAFE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5CA4D0-DAEC-4B24-88EC-407D8EFAFE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5CA4D0-DAEC-4B24-88EC-407D8EFAFE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5CA4D0-DAEC-4B24-88EC-407D8EFAFE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D988BC18-1269-4EAB-A0EF-77CF02445CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D988BC18-1269-4EAB-A0EF-77CF02445CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D988BC18-1269-4EAB-A0EF-77CF02445CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D988BC18-1269-4EAB-A0EF-77CF02445CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FF7E75-9342-4984-A60F-188F19004D35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FF7E75-9342-4984-A60F-188F19004D35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FF7E75-9342-4984-A60F-188F19004D35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FF7E75-9342-4984-A60F-188F19004D35}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD2CA927-1B09-41C0-9619-6C0C3077EA37}
+	EndGlobalSection
+EndGlobal
