@@ -8,13 +8,16 @@ using System.Drawing;
 
 namespace Driver
 {
+    //Specify the full name of the corresponding type with ControlDriverAttribute.
     [ControlDriver(TypeFullName = "DemoApp.BlockControl")]
     public class BlockControlDriver : WindowControl
     {
         static bool _loaded;
-
+        
         public BlockControlDriver(AppVar windowObject) : base(windowObject) => Init(App);
         public BlockControlDriver(WindowControl src) : base(src) => Init(App);
+
+        //If you use Friendly's function, you can easily implement it because you can call the internal API of another process.
         public int SelectedIndex => this.Dynamic().SelectedIndex;
         public void EmulateChangeSelectedIndex(int index) => this.Dynamic().SelectedIndex = index;
         public void EmulateMoveBlock(int index, Point location) => this.Dynamic().MoveBlock(index, location);

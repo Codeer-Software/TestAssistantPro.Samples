@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Windows.Forms;
 using Codeer.Friendly.Windows;
 using Driver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
