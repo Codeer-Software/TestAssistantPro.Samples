@@ -1,10 +1,19 @@
 # TestAssistantPro.Samples
 It is a sample you can learn how to use TestAssistantPro.
 
+Download form Visual Studio Marketplace  
+-------------
+[Test Assistant Pro](https://marketplace.visualstudio.com/items?itemName=Codeer.TestAssistantPro "Title")
+
+How to use samples
+-------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms "Title")
 
-Synergy effect of Code and Tool
+Summary 
 =============
+
+Synergy effect of Code and Tool
+-------------
 Automatic test creation is software development itself. Sharpened design / implementation is essential to succeed. It does not change.
 TestAssistantPro highly assisted implementation of Automatic Test recommended by Codeer.
 You can use it as an extension of VisualStudio.
