@@ -6,8 +6,8 @@ namespace DriverInTarget
 {
     //A class that generates code when an operation is performed on BlockControl.
     //Specify the full name of the corresponding control driver type with GeneratorAttribute.
-    [Generator("Driver.BlockControlDriver")]
-    public class BlockControlDriverGenerator : GeneratorBase
+    [CaptureCodeGenerator("Driver.BlockControlDriver")]
+    public class BlockControlDriverGenerator : CaptureCodeGeneratorBase
     {
         BlockControl _control;
 
