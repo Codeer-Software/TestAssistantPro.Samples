@@ -11,30 +11,41 @@ Experience
 -------------
 ### 1. Create driver
 Right-click in Solution Explorer and execute "Create Driver".
-<br>(img)<br>
+
+ ![CreateDriver.gif](Img/CreateDriver.gif)
+
 Select the application to be operated. Here, please select Demo.
-<br>(img)<br>
-A driver for the currently opened screen is generated.
-<br>(img)<br>
+
+ ![SelectDemo.gif](Img/SelectDemo.gif)
+ 
+ A driver for the currently opened screen is generated.
+
+ ![GenerateDriver.gif](Img/GenerateDriver.gif)
+
 Also create a driver for the modal dialog.
-<br>(img)<br>
+
+ ![GenerateModalDriver.gif](Img/GenerateModalDriver.gif)
 
 Applications selected for operation here are memorized and used next time. To change, please execute "Select Target".
-<br>(img)<br>
+
+ ![SelectTarget.gif](Img/SelectTarget.gif)
 
 ### 2. Check driver
 Right click on any C # code of the Driver project and execute "Check Driver". You can highlight the control corresponding to each line.
-<br>(img)<br>
+
+ ![CheckDriver.gif](Img/CheckDriver.gif)
 
 To finish, execute "End Check Driver".
-<br>(img)<br>
+
+ ![EndCheckDriver.gif](Img/EndCheckDriver.gif)
 
 It is also possible to change to a highly readable name here. If you change the number of lines, please exit once and execute "Check Driver" again.
 
 ### 3. Start Capture
 Right-click within CaptureTest function of Test.cs of Scenario project and execute "Start Capture".
 The operation method is generated with the code using the driver.
-(gif)
+
+ ![StartCapture.gif](Img/StartCapture.gif)
 
 ### 4. Advanced operation
 First we have to learn about Friendly.
@@ -113,7 +124,9 @@ namespace DriverInTarget
     }
 }
 ```
-<br>(gif)<br>
+
+ ![CustomControlDriver.gif](Img/CustomControlDriver.gif)
+
 
 
 
