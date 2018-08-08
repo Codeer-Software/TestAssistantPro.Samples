@@ -19,7 +19,19 @@ Status
   <th align="center">WPF</th>
 </tr>
 <tr>
-  <td align="center">Start Capture</td>
+  <td align="center">Capture</td>
+  <td align="center">〇</td>
+  <td align="center">〇</td>
+  <td align="center">〇</td>
+</tr>
+<tr>
+  <td align="center">Execute</td>
+  <td align="center">〇</td>
+  <td align="center">〇</td>
+  <td align="center">〇</td>
+</tr>
+<tr>
+  <td align="center">Debug</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
