@@ -41,8 +41,8 @@ To finish, execute "End Check Driver".
 
 It is also possible to change to a highly readable name here. If you change the number of lines, please exit once and execute "Check Driver" again.
 
-### 3. Start Capture
-Right-click within CaptureTest function of Test.cs of Scenario project and execute "Start Capture".
+### 3. Capture
+Right-click within CaptureTest function of Test.cs of Scenario project and execute "Capture".
 The operation method is generated with the code using the driver.
 
  ![StartCapture.gif](Img/StartCapture.gif)
