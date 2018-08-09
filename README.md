@@ -92,5 +92,5 @@ Also, by implementing a code generator corresponding to the control driver, it i
 
  ![CaptureCommand2.gif](https://raw.githubusercontent.com/Codeer-Software/TestAssistantPro.Samples/master/Img/CaptureCommand2.gif)
 
-It is available free of charge until July 31, 2018.
+It is available free of charge until August 31, 2018.
 =============
