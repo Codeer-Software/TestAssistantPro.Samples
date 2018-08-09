@@ -46,8 +46,18 @@ Right-click within CaptureTest function of Test.cs of Scenario project and execu
 The operation method is generated with the code using the driver.
 
  ![StartCapture.gif](Img/StartCapture.gif)
+ 
+### 4. Debug and Execute
+Right-click within any function of Test.cs of Scenario project and execute "Execute".
+You can execute the function immediately.
 
-### 4. Advanced operation
+ ![Execute.gif](Img/Execute.gif)
+ 
+Also, if you execute "Debug" you can debug using VisualStudio's debugger.
+
+ ![Debug.gif](Img/Debug.gif)
+ 
+### 5. Advanced operation
 First we have to learn about Friendly.
 [Friendly.Windows](https://github.com/Codeer-Software/Friendly.Windows "Title")
 
