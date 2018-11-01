@@ -38,9 +38,9 @@ Status
 </tr>
 <tr>
   <td align="center">Create Driver</td>
-  <td align="center">TODO</td>
   <td align="center">〇</td>
-  <td align="center">TODO</td>
+  <td align="center">〇</td>
+  <td align="center">〇</td>
 </tr>
 <tr>
   <td align="center">Check Driver</td>
