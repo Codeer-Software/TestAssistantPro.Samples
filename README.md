@@ -77,13 +77,10 @@ Synchronized code is output neatly even in the modal dialog.
 Driver generation and maintenance
 -------------
 Most of the drivers can be generated automatically.
-
- ![CreateDriverCommand.gif](https://raw.githubusercontent.com/Codeer-Software/TestAssistantPro.Samples/master/Img/CreateDriverCommand.gif)
- 
-If you want to know the contents of the generated driver, use Check Driver. When the code is selected, the corresponding control is displayed in red frame.
+When the code is selected, the corresponding control is displayed in red frame.
 By using the refactoring function of VisualStudio together, people can easily maintain Driver.
 
- ![CheckDriverCommand.gif](https://raw.githubusercontent.com/Codeer-Software/TestAssistantPro.Samples/master/Img/CheckDriverCommand.gif)
+ ![AnalyzeWindow_CreateDriver.gif](https://raw.githubusercontent.com/Codeer-Software/TestAssistantPro.Samples/master/Img/AnalyzeWindow_CreateDriver.gif)
 
 Also supports special control.
 -------------
