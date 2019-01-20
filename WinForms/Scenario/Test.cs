@@ -9,22 +9,21 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Scenario
 {
-	[TestClass]
-	public class Test
-	{
-		WindowsAppFriend _app;
+    [TestClass]
+    public class Test
+    {
+        WindowsAppFriend _app;
 
-		[TestInitialize]
-		public void TestInitialize() => _app = ProcessController.Start();
+        [TestInitialize]
+        public void TestInitialize() => _app = ProcessController.Start();
 
-		[TestCleanup]
-		public void TestCleanup() => Process.GetProcessById(_app.ProcessId).Kill();
+        [TestCleanup]
+        public void TestCleanup() => Process.GetProcessById(_app.ProcessId).Kill();
 
-		[TestMethod]
-		public void CaptureTest()
-		{
-
-		}
-	}
+        [TestMethod]
+        public void CaptureTest()
+        {
+        }
+    }
 }
 
