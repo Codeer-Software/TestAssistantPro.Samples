@@ -53,9 +53,6 @@
     <Reference Include="Codeer.TestAssistant.GeneratorToolKit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f7af39ab9bcf13fe, processorArchitecture=MSIL">
       <HintPath>..\Scenario\packages\Codeer.TestAssistant.GeneratorToolKit.3.0.0\lib\net20\Codeer.TestAssistant.GeneratorToolKit.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RM.Friendly.WPFStandardControls.3.0, Version=1.24.0.0, Culture=neutral, PublicKeyToken=1b8f25b96765ebb0, processorArchitecture=MSIL">
@@ -77,7 +74,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -88,8 +84,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Finder.cs" />
-    <Compile Include="MenuAction.cs" />
+    <Compile Include="WindowAnalysisMenuAction.cs" />
     <Compile Include="NamingRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
