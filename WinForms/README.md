@@ -9,37 +9,26 @@ Preparation
 
 Experience
 -------------
-### 1. Create driver
-Right-click in Solution Explorer and execute "Create Driver".
+### 1. Analyze Window
+Right-click in Solution Explorer and execute "Analyze Window".
 
- ![CreateDriver.gif](Img/CreateDriver.gif)
+ ![AnalyzeWindow.gif](Img/AnalyzeWindow.gif)
 
 Select the application to be operated. Here, please select Demo.
 
  ![SelectDemo.gif](Img/SelectDemo.gif)
  
- A driver for the currently opened screen is generated.
+"Analyze Window" displays all the controls in the currently opened window.
+You can check the values ​​and properties of all controls.
+If you want, you can change values ​​and properties in "Analyze Window".
 
- ![GenerateDriver.gif](Img/GenerateDriver.gif)
+ ![AnalyzeControl.gif](Img/AnalyzeControl.gif)
 
-Also create a driver for the modal dialog.
+### 2. Create Driver
+You can create a driver for the control you want to operate with "Create Driver" in "Analyze Window".
+You can highlight the control corresponding to each line.
 
- ![GenerateModalDriver.gif](Img/GenerateModalDriver.gif)
-
-Applications selected for operation here are memorized and used next time. To change, please execute "Select Target".
-
- ![SelectTarget.gif](Img/SelectTarget.gif)
-
-### 2. Check driver
-Right click on any C # code of the Driver project and execute "Check Driver". You can highlight the control corresponding to each line.
-
- ![CheckDriver.gif](Img/CheckDriver.gif)
-
-To finish, execute "End Check Driver".
-
- ![EndCheckDriver.gif](Img/EndCheckDriver.gif)
-
-It is also possible to change to a highly readable name here. If you change the number of lines, please exit once and execute "Check Driver" again.
+ ![CreateDriver.gif](Img/CreateDriver.gif)
 
 ### 3. Capture
 Right-click within CaptureTest function of Test.cs of Scenario project and execute "Capture".
