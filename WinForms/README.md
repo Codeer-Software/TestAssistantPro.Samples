@@ -34,7 +34,7 @@ You can highlight the control corresponding to each line.
 Right-click within CaptureTest function of Test.cs of Scenario project and execute "Capture".
 The operation method is generated with the code using the driver.
 
- ![StartCapture.gif](Img/StartCapture.gif)
+ ![Capture.gif](Img/Capture.gif)
  
 ### 4. Debug and Execute
 Right-click within any function of Test.cs of Scenario project and execute "Execute".
