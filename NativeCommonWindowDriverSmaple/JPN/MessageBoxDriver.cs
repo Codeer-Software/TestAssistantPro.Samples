@@ -22,16 +22,32 @@ namespace Driver
         [WindowDriverIdentify(CustomMethod = "TryAttach")]
         public static MessageBoxDriver Attach_MessageBox(this WindowsAppFriend app, string title)
             => new MessageBoxDriver(app.WaitForIdentifyFromWindowText(title));
-       
+
         public static bool TryAttach(WindowControl window, out string title)
         {
             title = null;
             if (window.AppVar != null) return false;
-            if (window.GetFromWindowClass("Static").Length != 1) return false;
-            var buttons = window.GetFromWindowClass("Static");
+
+            var staticCount = window.GetFromWindowClass("Static").Length;
+
+            var buttons = window.GetFromWindowClass("Button");
             if (buttons.Length == 0 || 3 < buttons.Length) return false;
+
+            //The message box must consist of buttons and static.
+            int childCount = 0;
+            EnumWindowsDelegate emumFunc = (hWnd, param) => { childCount++; return true; };
+            EnumChildWindows(window.Handle, emumFunc, IntPtr.Zero);
+            GC.KeepAlive(emumFunc);
+            if (buttons.Length + staticCount != childCount) return false;
+
             title = window.GetWindowText();
             return true;
         }
+
+        private delegate bool EnumWindowsDelegate(IntPtr hWnd, IntPtr lparam);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private extern static bool EnumChildWindows(IntPtr hWnd, EnumWindowsDelegate lpEnumFunc, IntPtr lparam);
     }
 }
