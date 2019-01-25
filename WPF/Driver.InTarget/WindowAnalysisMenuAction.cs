@@ -23,7 +23,7 @@ namespace Driver.InTarget
                     int i = 0;
                     foreach (var e in grid.Columns)
                     {
-                        AnalyzeWindow.Output.WriteLine("    const int " + e.Header.ToString() + " = " + i++ + ";");
+                        AnalyzeWindow.Output.WriteLine("    const int " + e.Header.ToString().Replace(" ", "") + " = " + i++ + ";");
                     }
                     AnalyzeWindow.Output.WriteLine("}");
                 };
@@ -38,7 +38,7 @@ namespace Driver.InTarget
                     int i = 0;
                     foreach (var e in grid.Columns)
                     {
-                        code.AppendLine("        const int " + e.Header.ToString() + " = " + i++ + ";");
+                        code.AppendLine("        const int " + e.Header.ToString().Replace(" ", "") + " = " + i++ + ";");
                     }
                     code.AppendLine("    }");
                     code.AppendLine("}");
