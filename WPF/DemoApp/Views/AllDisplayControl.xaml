@@ -65,7 +65,7 @@
                 <DataGridTemplateColumn  Header="Birthday" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding BirthDay,StringFormat=\{0:yyyy\/m\/d\}}"></TextBlock>
+                            <TextBlock Text="{Binding BirthDay,StringFormat=\{0:yyyy\/MM\/dd\}}"></TextBlock>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>

@@ -7,6 +7,7 @@ using VVMConnection;
 
 namespace DemoApp.ViewModels
 {
+    [RegionMemberLifetime(KeepAlive = false)]
     public class EntryControlViewModel : BindableBase
     {
         List<EntryInfo> _infos;
@@ -49,7 +50,7 @@ namespace DemoApp.ViewModels
                 IsMan = IsMan.Value,
                 BirthDay = BirthDay.Value.Value
             });
-            Name.Value = Mail.Value = Language.Value = string.Empty;
+            //Name.Value = Mail.Value = Language.Value = string.Empty;
             IsMan.Value = IsWoman.Value = false;
             BirthDay.Value = null;
             Registed(this, EventArgs.Empty);
