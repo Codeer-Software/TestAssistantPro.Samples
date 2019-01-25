@@ -7,7 +7,6 @@ using VVMConnection;
 
 namespace DemoApp.ViewModels
 {
-    [RegionMemberLifetime(KeepAlive = false)]
     public class EntryControlViewModel : BindableBase
     {
         List<EntryInfo> _infos;
