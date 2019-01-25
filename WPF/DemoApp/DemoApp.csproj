@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\VersionWindow.xaml.cs">
+      <DependentUpon>VersionWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\AllDisplayControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\VersionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -120,6 +127,9 @@
   <ItemGroup>
     <PackageReference Include="MahApps.Metro">
       <Version>1.6.5</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
     </PackageReference>
     <PackageReference Include="Prism.Unity" Version="7.1.0.431&#xD;" />
     <PackageReference Include="VVMConnection">

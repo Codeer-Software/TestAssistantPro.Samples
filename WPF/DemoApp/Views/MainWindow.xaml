@@ -4,9 +4,36 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:c="clr-namespace:VVMConnection;assembly=VVMConnection"
         Height="467.139" Width="538.353"
         Title="Entry information">
+    <c:Connection.Methods>
+        <c:MethodCollection>
+            <c:Method Name ="ShowSaveFileDialog" Invoker="AskSaveFilePath"/>
+            <c:Method Name ="ShowOpenFileDialog" Invoker="AskOpenFilePath"/>
+            <c:Method Name ="Show" Invoker="NotifyInfo">
+                <c:Method.Target>
+                    <c:MessageBox Button="OK" Caption="Info"/>
+                </c:Method.Target>
+            </c:Method>
+        </c:MethodCollection>
+    </c:Connection.Methods>
+    
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="{c:Event CreateNewData}"/>
+                <MenuItem Header="Open" Click="{c:Event OpenFile}"/>
+                <MenuItem Header="Save" Click="{c:Event OpenSave}"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="Version" Click="ShowVersion"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" Grid.Row="1"/>
     </Grid>
 </Controls:MetroWindow>

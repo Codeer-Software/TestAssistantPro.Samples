@@ -58,9 +58,6 @@ namespace DemoApp.ViewModels
         }
 
         public void Cancel()
-        {
-            _regionManager.RequestNavigate("ContentRegion", "AllDisplayControl");
-        }
-
+            => _regionManager.RequestNavigate("ContentRegion", "AllDisplayControl");
     }
 }

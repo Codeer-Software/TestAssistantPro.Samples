@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Codeer.TestAssistant.GeneratorToolKit;
+using RM.Friendly.WPFStandardControls;
 
 namespace Driver.Tools
 {
@@ -11,6 +12,8 @@ namespace Driver.Tools
 
             dic["Assert"] = () =>
             {
+                //TODO
+
                 foreach (var e in driver.GetType().GetProperties())
                 {
                     var obj = e.GetValue(driver);

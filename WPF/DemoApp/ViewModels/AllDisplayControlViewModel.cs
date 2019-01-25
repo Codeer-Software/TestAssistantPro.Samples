@@ -72,6 +72,7 @@ namespace DemoApp.ViewModels
             _infos = mgr.EntryInfos;
             _infos.ForEach(e => EntryInfos.Add(new EntryInfoDataGridRowVM(e)));
             _regionManager = regionManager;
+            mgr.Update = Update;
         }
 
         public void Search()
@@ -94,5 +95,7 @@ namespace DemoApp.ViewModels
             _infos.Remove(SelectedItem.Value.Core);
             Search();
         }
+
+        public void Update() => Search();
     }
 }
