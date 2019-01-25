@@ -1,4 +1,4 @@
-# WinForms Sample
+# WPF Sample
 It is a sample to experience Test.AssistantPro in the WPF application.
 
 Preparation
