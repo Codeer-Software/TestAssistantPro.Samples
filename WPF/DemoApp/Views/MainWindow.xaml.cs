@@ -6,16 +6,8 @@ namespace DemoApp.Views
 {
     public partial class MainWindow : MetroWindow
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-        public void Update()
-        {
-
-        }
-
+        public MainWindow() => InitializeComponent();
+        
         void ShowVersion(object sender, RoutedEventArgs e)
             => new VersionWindow().ShowDialog();
 

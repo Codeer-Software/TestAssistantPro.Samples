@@ -30,7 +30,7 @@
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="email" Canvas.Top="274"/>
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Preferred language" Canvas.Top="305"/>
         <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="sex" Canvas.Top="339" RenderTransformOrigin="0.57,0.18"/>
-        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Birthday" Canvas.Top="49"/>
+        <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Birthday" Canvas.Top="52"/>
         <Button Content="Entry" Canvas.Left="160" Canvas.Top="374" Width="75" Click="{c:Event Entry}"/>
         <Button Content="Cancel" Canvas.Left="240" Canvas.Top="374" Width="75" Click="{c:Event Cancel}"/>
     </Canvas>

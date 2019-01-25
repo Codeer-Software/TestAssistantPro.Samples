@@ -12,18 +12,31 @@ namespace Driver.Tools
 
             dic["Assert"] = () =>
             {
-                //TODO
-
                 foreach (var e in driver.GetType().GetProperties())
                 {
                     var obj = e.GetValue(driver);
                     if (obj == null) continue;
-                    var textProp = obj.GetType().GetProperty("Text");
-                    if (textProp == null) continue;
 
-                    var text = textProp.GetValue(obj).ToString();
-
-                    CaptureAdaptor.AddCode("Assert.AreEqual(" + accessPath + "." + e.Name + ".Text, \"" + text + "\");");
+                    if (obj is WPFTextBox textBox)
+                    {
+                        CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".Text.Is(\"" + textBox.Text + "\");");
+                    }
+                    if (obj is WPFComboBox combo)
+                    {
+                        CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".TextBox.Text.Is(\"" + combo.TextBox.Text + "\");");
+                    }
+                    if (obj is WPFToggleButton toggle)
+                    {
+                        var ret = toggle.IsChecked == null ? "IsNull()" :
+                                  toggle.IsChecked == true ? "Value.IsTrue()" : "Value.IsFalse()";
+                        CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".IsChecked." + ret + ";");
+                    }
+                    if (obj is WPFCalendar calender)
+                    {
+                        var ret = calender.SelectedDate == null ? "IsNull()" :
+                        "Is(new DateTime(" + calender.SelectedDate.Value.Year + ", " +  calender.SelectedDate.Value.Month + ", " + calender.SelectedDate.Value.Day + "))";
+                        CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".SelectedDate." + ret + ";");
+                    }
                 }
             };
 
