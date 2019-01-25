@@ -49,7 +49,7 @@ namespace DemoApp.ViewModels
                 IsMan = IsMan.Value,
                 BirthDay = BirthDay.Value.Value
             });
-            //Name.Value = Mail.Value = Language.Value = string.Empty;
+            Name.Value = Mail.Value = Language.Value = string.Empty;
             IsMan.Value = IsWoman.Value = false;
             BirthDay.Value = null;
             Registed(this, EventArgs.Empty);
