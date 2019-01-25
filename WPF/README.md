@@ -314,7 +314,13 @@ You can also use these key modifiers with Execute.
 You can also debug the user code (for example, injected mock code etc) running inside the target process during execution.
 
 ### 7. Win32 control
-Win32 controls can also generate drivers
-MessageBox, files, and windows related to folders are special
-From there we need to be shaped.
-As you are placing Driver / NativeJPN formatted ones, please use that.
+It is possible to generate drivers of Win32 Controls.
+However, the window for MessageBox, File and Folder are special.
+You need better drivers than generated drivers.
+We prepared a nice driver for Win32 control, so please use it.
+
+*Here is the Win32 drivers we prepared.*
+ ![Win32ControlDrivers.gif](Img/Win32ControlDrivers.gif)
+ 
+*Capture and operation for OpenFileDialog.*
+ ![CaptureOpenFileDialog.gif](Img/CaptureOpenFileDialog.gif)
