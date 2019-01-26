@@ -254,7 +254,7 @@ public class CapterAttachTreeMenuAction : ICapterAttachTreeMenuAction
                 }
                 if (obj is WPFComboBox combo)
                 {
-                    CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".TextBox.Text.Is(\"" + combo.TextBox.Text + "\");");
+                    CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".SelectedIndex.Is(" + combo.SelectedIndex + ");");
                 }
                 if (obj is WPFToggleButton toggle)
                 {

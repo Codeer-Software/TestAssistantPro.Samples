@@ -25,7 +25,6 @@ namespace Scenario
         [TestMethod]
         public void CaptureDemo()
         {
-
         }
     }
 }
