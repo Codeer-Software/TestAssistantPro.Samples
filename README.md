@@ -48,10 +48,6 @@ Status
   <td align="center">〇</td>
   <td align="center">〇</td>
 </tr>
-<tr>
-  <td align="center">with Using AI...</td>
-  <td colspan=3 align="center">TODO</td>
-</tr>
 </table>
 
 Summary 
@@ -89,5 +85,4 @@ Also, by implementing a code generator corresponding to the control driver, it i
 
  ![CaptureCommand2.gif](Img/CaptureCommand2.gif)
 
-It is available free of charge until August 31, 2018.
 =============
