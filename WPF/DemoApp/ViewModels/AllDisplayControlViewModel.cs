@@ -34,6 +34,7 @@ namespace DemoApp.ViewModels
                     }
                 }
             }
+            public int Age { get { return GetCore(); } set { SetCore(value); } }
             public DateTime BirthDay { get { return GetCore(); } set { SetCore(value); } }
 
             public event PropertyChangedEventHandler PropertyChanged = (_, __) => { };

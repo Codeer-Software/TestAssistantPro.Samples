@@ -18,6 +18,7 @@ namespace DemoApp.ViewModels
         public Notify<bool> IsMan { get; set; } = new Notify<bool>();
         public Notify<bool> IsWoman { get; set; } = new Notify<bool>();
         public Notify<DateTime?> BirthDay { get; set; } = new Notify<DateTime?>();
+        public Notify<int> Age { get; set; } = new Notify<int>(100);
 
         public event EventHandler Registed = (_, __) => { };
 
@@ -47,11 +48,13 @@ namespace DemoApp.ViewModels
                 Mail = Mail.Value,
                 Language = Language.Value,
                 IsMan = IsMan.Value,
+                Age = Age.Value,
                 BirthDay = BirthDay.Value.Value
             });
             Name.Value = Mail.Value = Language.Value = string.Empty;
             IsMan.Value = IsWoman.Value = false;
             BirthDay.Value = null;
+            Age.Value = 0;
             Registed(this, EventArgs.Empty);
 
             _regionManager.RequestNavigate("ContentRegion", "AllDisplayControl");

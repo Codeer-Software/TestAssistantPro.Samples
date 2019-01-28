@@ -5,7 +5,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:c="clr-namespace:VVMConnection;assembly=VVMConnection"
-        Height="467.139" Width="538.353"
+        Height="555" Width="555"
         Title="Entry information">
     <c:Connection.Methods>
         <c:MethodCollection>
