@@ -84,5 +84,3 @@ In many cases, Windows applications use standard controls, as well as third-part
 Also, by implementing a code generator corresponding to the control driver, it is possible to use the code generation function of TestAssistantPro even with its own control.
 
  ![CaptureCommand2.gif](Img/CaptureCommand2.gif)
-
-=============
