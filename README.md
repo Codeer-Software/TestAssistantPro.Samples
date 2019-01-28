@@ -37,13 +37,13 @@ Status
   <td align="center">〇</td>
 </tr>
 <tr>
-  <td align="center">Create Driver</td>
+  <td align="center">Analyze Window</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
 </tr>
 <tr>
-  <td align="center">Check Driver</td>
+  <td align="center">Create Driver(in Analyze Window)</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
