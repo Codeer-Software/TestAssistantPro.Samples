@@ -32,6 +32,7 @@ namespace Driver.InTarget
                 var targetCtrl = target as Control;
                 var targetPos = targetCtrl.PointToScreen(new Point());
                 var root = targetCtrl.GetLogicalTreeAncestor().Where(e => e is UserControl || e is Window || e is Page).FirstOrDefault();
+                if (root == null) return string.Empty;
 
                 //Search for the closest TextBlock on the left.
                 Func<FrameworkElement, Point, bool> isSameLine = (ctrl, pos) =>
