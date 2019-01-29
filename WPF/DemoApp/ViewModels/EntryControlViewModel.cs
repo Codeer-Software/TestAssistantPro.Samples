@@ -18,7 +18,7 @@ namespace DemoApp.ViewModels
         public Notify<bool> IsMan { get; set; } = new Notify<bool>();
         public Notify<bool> IsWoman { get; set; } = new Notify<bool>();
         public Notify<DateTime?> BirthDay { get; set; } = new Notify<DateTime?>();
-        public Notify<int> Age { get; set; } = new Notify<int>(100);
+        public Notify<int> Age { get; set; } = new Notify<int>();
 
         public event EventHandler Registed = (_, __) => { };
 

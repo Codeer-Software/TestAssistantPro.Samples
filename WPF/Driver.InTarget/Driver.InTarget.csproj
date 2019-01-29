@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Driver.InTarget</RootNamespace>
     <AssemblyName>Driver.InTarget</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DemoApp">
+      <HintPath>..\DemoApp\bin\Debug\DemoApp.exe</HintPath>
+    </Reference>
     <Reference Include="Codeer.TestAssistant.GeneratorToolKit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f7af39ab9bcf13fe, processorArchitecture=MSIL">
       <HintPath>..\Scenario\packages\Codeer.TestAssistant.GeneratorToolKit.3.0.0\lib\net20\Codeer.TestAssistant.GeneratorToolKit.dll</HintPath>
     </Reference>
@@ -58,6 +61,7 @@
     <Compile Include="WindowAnalysisMenuAction.cs" />
     <Compile Include="NamingRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WPFNumericUpDownGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

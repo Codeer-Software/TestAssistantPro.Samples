@@ -45,14 +45,79 @@ You can execute the function immediately.
 Also, if you execute "Debug" you can debug using VisualStudio's debugger.
 
  ![Debug.gif](Img/Debug.gif)
+
+### 5. CustomControl
+There are three ways to make a CustomControl driver.
+
+The first way is to create with "Create Driver" in "Analyze Window".
+The creation cost is the lowest, but maintainability is bad.
+
+![CustomControlDriverCreate1.gif](Img/CustomControlDriverCreate1.gif)
+
+The second way is to create it as "UserControlDriver".
+Although one procedure has been added compared to the first way, maintainability can be improved.
+
+![CustomControlDriverCreate2.gif](Img/CustomControlDriverCreate2.gif)
+
+The third way is to create a driver for that control yourself.
+Compared to the first and the second, the creation cost rises, but you can create a driver with high quality, which is the most maintainable and can perform the operation you want to do reliably.
+
+*Source code WPFNumericUpDown.cs*
+```csharp
+namespace Driver.CustomDrivers
+{
+	[ControlDriver(TypeFullName = "DemoApp.Views.NumericUpDownControl")]
+	public class WPFNumericUpDown : WPFControlBase<NumericUpDownControl>
+	{
+		public WPFNumericUpDown(AppVar src) : base(src) { }
+
+		public int Value => Getter<int>("Value");
+
+		public void EmulateChangeValue(int value)
+		{
+			var textBox = this.Dynamic().valueTextBox;
+			if (textBox != null)
+			{
+				textBox.Focus();
+				textBox.Text = value.ToString();
+			}
+		}
+	}
+}
+```
+
+*Source code WPFNumericUpDownGenerator.cs*
+```csharp
+namespace Driver.InTarget
+{
+	[CaptureCodeGenerator("Driver.CustomDrivers.WPFNumericUpDown")]
+	public class WPFNumericUpDownGenerator : CaptureCodeGeneratorBase
+	{
+		NumericUpDownControl _control;
+		protected override void Attach()
+		{
+			_control = (NumericUpDownControl)ControlObject;
+			_control.ValueChanged += ValueChanged;
+		}
+
+		protected override void Detach()
+		{
+			_control.ValueChanged -= ValueChanged;
+		}
+
+		void ValueChanged(object sender, EventArgs e)
+			=> AddSentence(new TokenName(), ".EmulateChangeValue(" + _control.Value, new TokenAsync(CommaType.Before), ");");
+	}
+}
+```
  
-### 5. Customize
+### 6. Customize
 Windows applications have various features.
 It is impossible to efficiently generate code if it is forcibly handled in a unified way.
 Therefore, TestAssistantPro provides several customization functions according to each project.
 If you use the customization well, you can achieve highly efficient code generation just fitted to each project.
 
-#### 5.1. Customizing the name when generating the driver
+#### 6.1. Customizing the name when generating the driver
 You can customize the name used for each property when generating the driver.
 The name created so far is a good name because it has already been customized.
 Since the naming convention differs depending on the project in many cases, this is provided in the form of customization.
@@ -149,11 +214,11 @@ public class NamingRule : IDriverElementNameGenerator
 }
 ``` 
  
-#### 5.2. Menu customization
+#### 6.2. Menu customization
 As you become more familiar with automated test creation, you may find that there are frequently implemented code for each project.
 In such a case, you can automate that code generation.
 
-##### 5.2.1 IWindowAnalysisMenuAction
+##### 6.2.1 IWindowAnalysisMenuAction
 Prepare a class that implements IWindowAnalysisMenuAction
 You can call it from the tree context menu at Analzye.
 
@@ -219,7 +284,7 @@ public class WindowAnalysisMenuAction : IWindowAnalysisMenuAction
 *Show analyzed info with CodeViewer.*
  ![OutputAnalyzedInfo2.gif](Img/OutputAnalyzedInfo2.gif)
 
-##### 5.2.2 ICapterAttachTreeMenuAction
+##### 6.2.2 ICapterAttachTreeMenuAction
 If you prepare a class that implements ICapterAttachTreeMenuAction
 You can call it from the context menu of the Attach Tree being captured.
 
@@ -276,12 +341,12 @@ public class CapterAttachTreeMenuAction : ICapterAttachTreeMenuAction
 }
 ```
 
-### 6. Debugging
+### 7. Debugging
 TestAssistantPro uses Driver and customization code to assist in code generation.
 Depending on those codes it may not work well.
 In order to prepare for such a case, I have a debugging function.
 
-#### 6.1 Log
+#### 7.1 Log
 Please check the log if expected behavior is not done.
 Exceptions may be displayed in some cases.
 You can also log yourself.
@@ -299,7 +364,7 @@ public class WindowAnalysisMenuAction: IWindowAnalysisMenuAction
 }
 ```
 
-#### 6.2 Debugging
+#### 7.2 Debugging
 During Analyze, if you wish to debug Driver or customize code in Capture, press each modifier key to execute each function.
 
 Shift Functions
@@ -313,7 +378,7 @@ Ctrl Functions
 You can also use these key modifiers with Execute.
 You can also debug the user code (for example, injected mock code etc) running inside the target process during execution.
 
-### 7. Win32 control
+### 8. Win32 control
 It is possible to generate drivers of Win32 Controls.
 However, the window for MessageBox, File and Folder are special.
 You need better drivers than generated drivers.

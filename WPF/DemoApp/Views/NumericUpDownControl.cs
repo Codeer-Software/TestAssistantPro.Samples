@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,12 +21,22 @@ namespace DemoApp.Views
                 "Value",
                 typeof(int),
                 typeof(NumericUpDownControl),
-                new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+                new FrameworkPropertyMetadata(
+                    0,
+                    FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                    (d, e) => 
+                    {
+                        (d as NumericUpDownControl)?.ValueChanged?.Invoke(d, null);
+                    }));
+
         public int Value
         {
             get { return (int)GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
+
+        // Events.
+        public event EventHandler ValueChanged;
 
         // Fields.
         private TextBox valueTextBox;
