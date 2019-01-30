@@ -2,17 +2,14 @@
 using Codeer.Friendly.Dynamic;
 using Codeer.TestAssistant.GeneratorToolKit;
 using DemoApp.Views;
-using Driver.InTarget;
 using RM.Friendly.WPFStandardControls;
-using System;
-using System.Windows.Controls;
 
 namespace Driver.CustomDrivers
 {
-	[ControlDriver(TypeFullName = "DemoApp.Views.NumericUpDownControl")]
-	public class WPFNumericUpDown : WPFControlBase<NumericUpDownControl>
+    [ControlDriver(TypeFullName = "DemoApp.Views.NumericUpDownControl")]
+	public class WPFNumericUpDownDriver : WPFControlBase<NumericUpDownControl>
 	{
-		public WPFNumericUpDown(AppVar src) : base(src) { }
+		public WPFNumericUpDownDriver(AppVar src) : base(src) { }
 
 		public int Value => Getter<int>("Value");
 

@@ -4,8 +4,8 @@ using System;
 
 namespace Driver.InTarget
 {
-	[CaptureCodeGenerator("Driver.CustomDrivers.WPFNumericUpDown")]
-	public class WPFNumericUpDownGenerator : CaptureCodeGeneratorBase
+	[CaptureCodeGenerator("Driver.CustomDrivers.WPFNumericUpDownDriver")]
+	public class WPFNumericUpDownDriverGenerator : CaptureCodeGeneratorBase
 	{
 		NumericUpDownControl _control;
 		protected override void Attach()

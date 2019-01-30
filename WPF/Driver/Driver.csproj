@@ -109,7 +109,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomDrivers\WPFNumericUpDown.cs" />
+    <Compile Include="CustomDrivers\WPFNumericUpDownDriver.cs" />
     <Compile Include="NativeJPN\FolderDialogDriver.cs" />
     <Compile Include="NativeJPN\MessageBoxDriver.cs" />
     <Compile Include="NativeJPN\OpenFileDialogDriver.cs" />
