@@ -61,7 +61,7 @@
     <Compile Include="WindowAnalysisMenuAction.cs" />
     <Compile Include="NamingRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WPFNumericUpDownGenerator.cs" />
+    <Compile Include="WPFNumericUpDownDriverGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
