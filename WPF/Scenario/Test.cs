@@ -2,6 +2,8 @@
 using System.IO;
 using Codeer.Friendly.Windows;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Driver.DemoApp;
+using System;
 
 namespace Scenario
 {

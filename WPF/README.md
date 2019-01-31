@@ -66,16 +66,16 @@ Compared to the first and the second, the creation cost rises, but you can creat
 ```csharp
 namespace Driver.CustomDrivers
 {
-	[ControlDriver(TypeFullName = "DemoApp.Views.NumericUpDownControl")]
-	public class WPFNumericUpDown : WPFControlBase<NumericUpDownControl>
+    [ControlDriver(TypeFullName = "DemoApp.Views.NumericUpDownControl")]
+	public class WPFNumericUpDownDriver : WPFControlBase<NumericUpDownControl>
 	{
-		public WPFNumericUpDown(AppVar src) : base(src) { }
+		public WPFNumericUpDownDriver(AppVar src) : base(src) { }
 
 		public int Value => Getter<int>("Value");
 
 		public void EmulateChangeValue(int value)
 		{
-			var textBox = this.Dynamic().valueTextBox;
+			var textBox = this.Dynamic().ValueTextBox;
 			if (textBox != null)
 			{
 				textBox.Focus();
@@ -90,8 +90,8 @@ namespace Driver.CustomDrivers
 ```csharp
 namespace Driver.InTarget
 {
-	[CaptureCodeGenerator("Driver.CustomDrivers.WPFNumericUpDown")]
-	public class WPFNumericUpDownGenerator : CaptureCodeGeneratorBase
+	[CaptureCodeGenerator("Driver.CustomDrivers.WPFNumericUpDownDriver")]
+	public class WPFNumericUpDownDriverGenerator : CaptureCodeGeneratorBase
 	{
 		NumericUpDownControl _control;
 		protected override void Attach()
@@ -106,7 +106,48 @@ namespace Driver.InTarget
 		}
 
 		void ValueChanged(object sender, EventArgs e)
-			=> AddSentence(new TokenName(), ".EmulateChangeValue(" + _control.Value, new TokenAsync(CommaType.Before), ");");
+		{
+			if (_control.ValueTextBox.IsFocused || _control.UpButton.IsFocused || _control.DownButton.IsFocused)
+				AddSentence(new TokenName(), ".EmulateChangeValue(" + _control.Value, new TokenAsync(CommaType.Before), ");");
+		}
+
+		public override void Optimize(List<Sentence> code)
+		{
+			bool findChangeText = false;
+			for (int i = code.Count - 1; 0 <= i; i--)
+			{
+				if (IsDuplicatedFunction(code[i], "EmulateChangeValue"))
+				{
+					if (findChangeText)
+					{
+						code.RemoveAt(i);
+					}
+					findChangeText = true;
+				}
+				else
+				{
+					findChangeText = false;
+				}
+			}
+		}
+
+		private bool IsDuplicatedFunction(Sentence sentence, string function)
+		{
+			if (!ReferenceEquals(this, sentence.Owner))
+			{
+				return false;
+			}
+			if (sentence.Tokens.Length <= 2)
+			{
+				return false;
+			}
+			if (!(sentence.Tokens[0] is TokenName) ||
+				(sentence.Tokens[1] == null))
+			{
+				return false;
+			}
+			return sentence.Tokens[1].ToString().IndexOf("." + function) == 0;
+		}
 	}
 }
 ```
@@ -139,6 +180,7 @@ public class EntryControl_Driver
     public WPFToggleButton Man => new WPFToggleButton(Core.LogicalTree().ByType<ContentControl>().ByContentText("Man").Single());
     public WPFToggleButton Woman => new WPFToggleButton(Core.LogicalTree().ByType<ContentControl>().ByContentText("Woman").Single());
     public WPFCalendar Birthday => new WPFCalendar(Core.LogicalTree().ByBinding("BirthDay.Value").Single());
+    public WPFNumericUpDownDriver Age => new WPFNumericUpDownDriver(Core.LogicalTree().ByBinding("Age.Value").Single());
     public WPFButtonBase Entry => new WPFButtonBase(Core.LogicalTree().ByType<ContentControl>().ByContentText("Entry").Single());
     public WPFButtonBase Cancel => new WPFButtonBase(Core.LogicalTree().ByType<ContentControl>().ByContentText("Cancel").Single());
 
@@ -171,7 +213,7 @@ public class NamingRule : IDriverElementNameGenerator
         }
 
         //Get name from nearby TextBlock.
-        if (target is TextBox || target is ComboBox || target is Calendar)
+        if (target is TextBox || target is ComboBox || target is Calendar || target is NumericUpDownControl)
         {
             var targetCtrl = target as Control;
             var targetPos = targetCtrl.PointToScreen(new Point());
@@ -332,6 +374,10 @@ public class CapterAttachTreeMenuAction : ICapterAttachTreeMenuAction
                     var ret = calender.SelectedDate == null ? "IsNull()" :
                     "Is(new DateTime(" + calender.SelectedDate.Value.Year + ", " +  calender.SelectedDate.Value.Month + ", " + calender.SelectedDate.Value.Day + "))";
                     CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".SelectedDate." + ret + ";");
+                }
+                if (obj is WPFNumericUpDownDriver numericUpDown)
+                {
+                    CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".Value.Is(" + numericUpDown.Value + ");");
                 }
             }
         };

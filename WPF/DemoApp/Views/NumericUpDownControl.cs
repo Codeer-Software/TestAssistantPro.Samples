@@ -39,9 +39,9 @@ namespace DemoApp.Views
         public event EventHandler ValueChanged;
 
         // Fields.
-        private TextBox valueTextBox;
-        private RepeatButton upButton;
-        private RepeatButton downButton;
+        public TextBox ValueTextBox { get; set; }
+        public RepeatButton UpButton { get; set; }
+        public RepeatButton DownButton { get; set; }
 
         // Apply Template.
         public override void OnApplyTemplate()
@@ -49,29 +49,29 @@ namespace DemoApp.Views
             base.OnApplyTemplate();
 
             // Dettach.
-            if (valueTextBox != null)
+            if (ValueTextBox != null)
             {
-                valueTextBox.PreviewTextInput -= ValueTextBox_PreviewTextInput;
-                valueTextBox.TextChanged -= ValueTextBox_TextChanged;
-                CommandManager.RemoveExecutedHandler(valueTextBox, ValueTextBox_PreviewExecuted);
+                ValueTextBox.PreviewTextInput -= ValueTextBox_PreviewTextInput;
+                ValueTextBox.TextChanged -= ValueTextBox_TextChanged;
+                CommandManager.RemoveExecutedHandler(ValueTextBox, ValueTextBox_PreviewExecuted);
             }
-            if (upButton != null) upButton.Click -= UpButton_Click;
-            if (downButton != null) downButton.Click -= DownButton_Click;
+            if (UpButton != null) UpButton.Click -= UpButton_Click;
+            if (DownButton != null) DownButton.Click -= DownButton_Click;
 
             // Get current controls.
-            valueTextBox = GetTemplateChild("PART_ValueTextBox") as TextBox;
-            upButton = GetTemplateChild("PART_UpButton") as RepeatButton;
-            downButton = GetTemplateChild("PART_DownButton") as RepeatButton;
+            ValueTextBox = GetTemplateChild("PART_ValueTextBox") as TextBox;
+            UpButton = GetTemplateChild("PART_UpButton") as RepeatButton;
+            DownButton = GetTemplateChild("PART_DownButton") as RepeatButton;
 
             // Attach.
-            if (valueTextBox != null)
+            if (ValueTextBox != null)
             {
-                valueTextBox.PreviewTextInput += ValueTextBox_PreviewTextInput;
-                valueTextBox.TextChanged += ValueTextBox_TextChanged;
-                CommandManager.AddPreviewExecutedHandler(valueTextBox, ValueTextBox_PreviewExecuted);
+                ValueTextBox.PreviewTextInput += ValueTextBox_PreviewTextInput;
+                ValueTextBox.TextChanged += ValueTextBox_TextChanged;
+                CommandManager.AddPreviewExecutedHandler(ValueTextBox, ValueTextBox_PreviewExecuted);
             }
-            if (upButton != null) upButton.Click += UpButton_Click;
-            if (downButton != null) downButton.Click += DownButton_Click;
+            if (UpButton != null) UpButton.Click += UpButton_Click;
+            if (DownButton != null) DownButton.Click += DownButton_Click;
         }
 
         // TextBox Events.

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Codeer.TestAssistant.GeneratorToolKit;
+using Driver.CustomDrivers;
 using RM.Friendly.WPFStandardControls;
 
 namespace Driver.Tools
@@ -36,6 +37,10 @@ namespace Driver.Tools
                         var ret = calender.SelectedDate == null ? "IsNull()" :
                         "Is(new DateTime(" + calender.SelectedDate.Value.Year + ", " +  calender.SelectedDate.Value.Month + ", " + calender.SelectedDate.Value.Day + "))";
                         CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".SelectedDate." + ret + ";");
+                    }
+                    if (obj is WPFNumericUpDownDriver numericUpDown)
+                    {
+                        CaptureAdaptor.AddCode(accessPath + "." + e.Name + ".Value.Is(" + numericUpDown.Value + ");");
                     }
                 }
             };

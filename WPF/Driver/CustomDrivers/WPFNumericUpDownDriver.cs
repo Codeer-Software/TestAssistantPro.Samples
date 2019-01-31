@@ -15,7 +15,7 @@ namespace Driver.CustomDrivers
 
 		public void EmulateChangeValue(int value)
 		{
-			var textBox = this.Dynamic().valueTextBox;
+			var textBox = this.Dynamic().ValueTextBox;
 			if (textBox != null)
 			{
 				textBox.Focus();

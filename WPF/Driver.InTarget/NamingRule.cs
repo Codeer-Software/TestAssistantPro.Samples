@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Linq;
 using System.Windows;
 using System;
+using DemoApp.Views;
 
 namespace Driver.InTarget
 {
@@ -27,7 +28,7 @@ namespace Driver.InTarget
             }
 
             //Get name from nearby TextBlock.
-            if (target is TextBox || target is ComboBox || target is Calendar)
+            if (target is TextBox || target is ComboBox || target is Calendar || target is NumericUpDownControl)
             {
                 var targetCtrl = target as Control;
                 var targetPos = targetCtrl.PointToScreen(new Point());
