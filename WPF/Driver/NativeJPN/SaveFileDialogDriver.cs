@@ -22,25 +22,15 @@ namespace Driver.NativeJPN
         {
             Core = core;
 
-            var isDetailMode = 0 < Core.GetFromWindowText("詳細設定(&D)").Length;
-
-            if (isDetailMode)
-            {
-                ComboBox_FileName = new NativeComboBox(Core.GetFromWindowClass("ComboBoxEx32").OrderBy(e => GetWindowRect(e.Handle).Top).First());
-            }
-            else
-            {
-                var combos = Core.GetFromWindowClass("ComboBox");
-                int index = combos.Length == 3 ? 1 : 0;
-                var combo = combos.OrderBy(e => GetWindowRect(e.Handle).Top).ToArray()[index];
-                ComboBox_FileName = new NativeComboBox(combo);
-            }
+            var combos = Core.GetFromWindowClass("ComboBox");
+            int indexFileName = combos.Length == 3 ? 1 : 0;
+            int indexFileType = combos.Length == 3 ? 2 : 1;
+            var sortedComobs = combos.OrderBy(e => GetWindowRect(e.Handle).Top).ToArray();
+            ComboBox_FileName = new NativeComboBox(sortedComobs[indexFileName]);
+            ComboBox_FileType = new NativeComboBox(sortedComobs[indexFileType]);
 
             Button_Save = new NativeButton(Core.IdentifyFromWindowText("保存(&S)"));
             Button_Cancel = new NativeButton(Core.IdentifyFromWindowText("キャンセル"));
-
-            var handle = ComboBox_FileName.ParentWindow.Handle;
-            ComboBox_FileType = new NativeComboBox(Core.GetFromWindowClass("ComboBox").Where(e => e.ParentWindow.Handle == handle).OrderBy(e => GetWindowRect(e.Handle).Top).Last());
         }
 
         [DllImport("user32.dll")]
