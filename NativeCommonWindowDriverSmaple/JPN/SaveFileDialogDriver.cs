@@ -7,42 +7,30 @@ using System;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace Driver
+namespace Driver.NativeJPN
 {
     public class SaveFileDialogDriver
     {
         public WindowControl Core { get; private set; }
 
-        public NativeButton Button_保存 { get; set; }
-        public NativeButton Button_キャンセル { get; set; }
-        public NativeComboBox ComboBox_ファイル名 { get; private set; }
-        public NativeComboBox ComboBox_ファイルの種類 { get; private set; }
+        public NativeButton Button_Save { get; set; }
+        public NativeButton Button_Cancel { get; set; }
+        public NativeComboBox ComboBox_FileName { get; private set; }
+        public NativeComboBox ComboBox_FileType { get; private set; }
 
         public SaveFileDialogDriver(WindowControl core)
         {
             Core = core;
 
-            var isDetailMode = 0 < Core.GetFromWindowText("詳細設定(&D)").Length;
+            var combos = Core.GetFromWindowClass("ComboBox");
+            int indexFileName = combos.Length == 3 ? 1 : 0;
+            int indexFileType = combos.Length == 3 ? 2 : 1;
+            var sortedComobs = combos.OrderBy(e => GetWindowRect(e.Handle).Top).ToArray();
+            ComboBox_FileName = new NativeComboBox(sortedComobs[indexFileName]);
+            ComboBox_FileType = new NativeComboBox(sortedComobs[indexFileType]);
 
-            if (isDetailMode)
-            {
-                ComboBox_ファイル名 = new NativeComboBox(Core.GetFromWindowClass("ComboBoxEx32").OrderBy(e => GetWindowRect(e.Handle).Top).First());
-            }
-            else
-            {
-                //クラシック表示の場合はコンボボックスは二つ
-                var combos = Core.GetFromWindowClass("ComboBox");
-                int index = combos.Length == 3 ? 1 : 0;
-                var combo = combos.OrderBy(e => GetWindowRect(e.Handle).Top).ToArray()[index];
-                ComboBox_ファイル名 = new NativeComboBox(combo);
-            }
-
-            Button_保存 = new NativeButton(Core.IdentifyFromWindowText("保存(&S)"));
-            Button_キャンセル = new NativeButton(Core.IdentifyFromWindowText("キャンセル"));
-
-            var handle = ComboBox_ファイル名.ParentWindow.Handle;
-            ComboBox_ファイルの種類 = new NativeComboBox(Core.GetFromWindowClass("ComboBox").Where(e => e.ParentWindow.Handle == handle).OrderBy(e => GetWindowRect(e.Handle).Top).Last());
-
+            Button_Save = new NativeButton(Core.IdentifyFromWindowText("保存(&S)"));
+            Button_Cancel = new NativeButton(Core.IdentifyFromWindowText("キャンセル"));
         }
 
         [DllImport("user32.dll")]
@@ -60,10 +48,10 @@ namespace Driver
     public static class SaveFileDialogDriverExtensions
     {
         [WindowDriverIdentify(CustomMethod = "TryAttach")]
-        public static SaveFileDialogDriver Attach_Dlg_保存(this WindowsAppFriend app, string title) 
+        public static SaveFileDialogDriver Attach_SaveFileDlialog(this WindowsAppFriend app, string title) 
             => new SaveFileDialogDriver(WindowControl.WaitForIdentifyFromWindowText(app, title));
 
-        public static SaveFileDialogDriver Attach_Dlg_保存(this WindowsAppFriend app, string title, Async async)
+        public static SaveFileDialogDriver Attach_SaveFileDlialog(this WindowsAppFriend app, string title, Async async)
         {
             var core = WindowControl.WaitForIdentifyFromWindowText(app, title, async);
             if (core == null) return null;

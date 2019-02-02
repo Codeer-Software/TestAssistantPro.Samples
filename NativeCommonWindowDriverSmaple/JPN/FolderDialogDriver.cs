@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Threading;
 
-namespace Driver
+namespace Driver.NativeJPN
 {
     public class FolderDialogDriver
     {

@@ -2,8 +2,10 @@
 using Codeer.Friendly.Windows.Grasp;
 using Codeer.Friendly.Windows.NativeStandardControls;
 using Codeer.TestAssistant.GeneratorToolKit;
+using System;
+using System.Runtime.InteropServices;
 
-namespace Driver
+namespace Driver.NativeJPN
 {
     public class MessageBoxDriver
     {
@@ -11,10 +13,10 @@ namespace Driver
 
         public MessageBoxDriver(WindowControl core) => Core = core;
         public string Message => Core.IdentifyFromWindowClass("Static").GetWindowText();
-        public NativeButton Button_はい => new NativeButton(Core.IdentifyFromWindowText("はい(&Y)"));
-        public NativeButton Button_いいえ => new NativeButton(Core.IdentifyFromWindowText("いいえ(&N)"));
+        public NativeButton Button_Yes => new NativeButton(Core.IdentifyFromWindowText("はい(&Y)"));
+        public NativeButton Button_No => new NativeButton(Core.IdentifyFromWindowText("いいえ(&N)"));
         public NativeButton Button_OK => new NativeButton(Core.IdentifyFromWindowText("OK"));
-        public NativeButton Button_キャンセル => new NativeButton(Core.IdentifyFromWindowText("キャンセル"));
+        public NativeButton Button_Cancel => new NativeButton(Core.IdentifyFromWindowText("キャンセル"));
 	}
 
     public static class MessageBoxDriverExtensions
@@ -22,7 +24,7 @@ namespace Driver
         [WindowDriverIdentify(CustomMethod = "TryAttach")]
         public static MessageBoxDriver Attach_MessageBox(this WindowsAppFriend app, string title)
             => new MessageBoxDriver(app.WaitForIdentifyFromWindowText(title));
-
+       
         public static bool TryAttach(WindowControl window, out string title)
         {
             title = null;
