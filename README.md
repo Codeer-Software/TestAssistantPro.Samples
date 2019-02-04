@@ -8,6 +8,8 @@ Download form Visual Studio Marketplace
 How to use samples
 -------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms "Title")
+<br>
+[for WPF](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WPF "Title")
 
 Status
 -------------
