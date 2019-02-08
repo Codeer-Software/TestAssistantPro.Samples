@@ -1,6 +1,8 @@
 # WPF Sample
 It is a sample to experience Test.AssistantPro in the WPF application.
 
+For Japanese: [æ—¥æœ¬èªž](https://github.com/Codeer-Software/TestAssistantPro.Samples/blob/master/WPF/README_JP.md)
+
 Preparation
 -------------
 ##### 1. Open and Debug build DemoApp/DemoApp.sln
@@ -402,11 +404,11 @@ This can also be used to implement IWindowAnalysisMenuAction, or it can be inclu
 ```csharp
 public class WindowAnalysisMenuAction: IWindowAnalysisMenuAction
 {
-    public Dictionary <string, MenuAction> GetAction (object target, WindowAnalysisTreeInfo info)
-    {
-        Logger.WriteLine ("Execute GetAction.");
-        ...
-    }
+Â Â Â Â public Dictionary <string, MenuAction> GetAction (object target, WindowAnalysisTreeInfo info)
+Â Â Â Â {
+Â Â Â Â Â Â Â Â Logger.WriteLine ("Execute GetAction.");
+Â Â Â Â Â Â Â Â ...
+Â Â Â Â }
 }
 ```
 
