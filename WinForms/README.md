@@ -1,6 +1,8 @@
 # WinForms Sample
 It is a sample to experience Test.AssistantPro in the WinForms application.
 
+For Japanese: [日本語](https://github.com/Codeer-Software/TestAssistantPro.Samples/blob/master/WinForms/README_JP.md)
+
 Preparation
 -------------
 ##### 1. Open and Debug build DemoApp/DemoApp.sln
