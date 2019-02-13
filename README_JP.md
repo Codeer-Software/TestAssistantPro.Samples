@@ -9,7 +9,7 @@ Visual Studio Marketplace からダウンロード
 -------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms/README_JP.md "Title")
 <br>
-[for WPF](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WPFREADME_JP.md "Title")
+[for WPF](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WPF/README_JP.md "Title")
 
 対応状況
 -------------
