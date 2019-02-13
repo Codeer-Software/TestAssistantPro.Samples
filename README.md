@@ -24,9 +24,9 @@ Status
 </tr>
 <tr>
   <td align="center">Status</td>
-  <td align="center">?</td>
-  <td align="center">?</td>
-  <td align="center">?</td>
+  <td align="center">○</td>
+  <td align="center">○</td>
+  <td align="center">○</td>
 </tr>
 </table>
 
