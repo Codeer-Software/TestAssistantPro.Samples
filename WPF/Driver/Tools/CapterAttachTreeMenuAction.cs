@@ -5,7 +5,7 @@ using RM.Friendly.WPFStandardControls;
 
 namespace Driver.Tools
 {
-    public class CapterAttachTreeMenuAction : ICapterAttachTreeMenuAction
+    public class CapterAttachTreeMenuAction : ICaptureAttachTreeMenuAction
     {
         public Dictionary<string, MenuAction> GetAction(string accessPath, object driver)
         {
