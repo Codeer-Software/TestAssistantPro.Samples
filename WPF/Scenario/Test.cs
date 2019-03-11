@@ -6,26 +6,26 @@ using System;
 
 namespace Scenario
 {
-	[TestClass]
-	public class Test
-	{
-		WindowsAppFriend _app;
+    [TestClass]
+    public class Test
+    {
+        WindowsAppFriend _app;
 
-		[TestInitialize]
-		public void TestInitialize()
-		{
-			var path = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), "../../../DemoApp/bin/Debug/DemoApp.exe"));
-			var info = new ProcessStartInfo(path) { WorkingDirectory = Path.GetDirectoryName(path) };
-			_app = new WindowsAppFriend(Process.Start(info));
-		}
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            var path = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), "../../../DemoApp/bin/Debug/DemoApp.exe"));
+            var info = new ProcessStartInfo(path) { WorkingDirectory = Path.GetDirectoryName(path) };
+            _app = new WindowsAppFriend(Process.Start(info));
+        }
 
-		[TestCleanup]
-		public void TestCleanup() => Process.GetProcessById(_app.ProcessId).Kill();
+        [TestCleanup]
+        public void TestCleanup() => Process.GetProcessById(_app.ProcessId).Kill();
 
-		[TestMethod]
-		public void CaptureDemo()
-		{
+        [TestMethod]
+        public void CaptureDemo()
+        {
 
-		}
-	}
+        }
+    }
 }

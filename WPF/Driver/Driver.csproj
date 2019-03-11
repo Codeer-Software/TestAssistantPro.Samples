@@ -72,28 +72,22 @@
     <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <HintPath>..\Scenario\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Friendly.XamControls, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\Friendly.XamControls.1.4.3\lib\net40\Friendly.XamControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Friendly.XamControls.Generator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\Friendly.XamControls.1.4.3\lib\net40\Friendly.XamControls.Generator.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RM.Friendly.WPFStandardControls.3.0, Version=1.24.5.0, Culture=neutral, PublicKeyToken=1b8f25b96765ebb0, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.24.5\lib\net40\RM.Friendly.WPFStandardControls.3.0.dll</HintPath>
+    <Reference Include="RM.Friendly.WPFStandardControls.3.0, Version=1.25.0.0, Culture=neutral, PublicKeyToken=1b8f25b96765ebb0, processorArchitecture=MSIL">
+      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.25.0\lib\net40\RM.Friendly.WPFStandardControls.3.0.dll</HintPath>
     </Reference>
-    <Reference Include="RM.Friendly.WPFStandardControls.3.0.Generator, Version=1.24.5.0, Culture=neutral, PublicKeyToken=41822cddf2e8cce7, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.24.5\lib\net40\RM.Friendly.WPFStandardControls.3.0.Generator.dll</HintPath>
+    <Reference Include="RM.Friendly.WPFStandardControls.3.0.Generator, Version=1.25.0.0, Culture=neutral, PublicKeyToken=41822cddf2e8cce7, processorArchitecture=MSIL">
+      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.25.0\lib\net40\RM.Friendly.WPFStandardControls.3.0.Generator.dll</HintPath>
     </Reference>
-    <Reference Include="RM.Friendly.WPFStandardControls.3.5, Version=1.24.5.0, Culture=neutral, PublicKeyToken=133fc95b5bce0b86, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.24.5\lib\net40\RM.Friendly.WPFStandardControls.3.5.dll</HintPath>
+    <Reference Include="RM.Friendly.WPFStandardControls.3.5, Version=1.25.0.0, Culture=neutral, PublicKeyToken=133fc95b5bce0b86, processorArchitecture=MSIL">
+      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.25.0\lib\net40\RM.Friendly.WPFStandardControls.3.5.dll</HintPath>
     </Reference>
-    <Reference Include="RM.Friendly.WPFStandardControls.4.0, Version=1.24.5.0, Culture=neutral, PublicKeyToken=804da7e4293a9f15, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.24.5\lib\net40\RM.Friendly.WPFStandardControls.4.0.dll</HintPath>
+    <Reference Include="RM.Friendly.WPFStandardControls.4.0, Version=1.25.0.0, Culture=neutral, PublicKeyToken=804da7e4293a9f15, processorArchitecture=MSIL">
+      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.25.0\lib\net40\RM.Friendly.WPFStandardControls.4.0.dll</HintPath>
     </Reference>
-    <Reference Include="RM.Friendly.WPFStandardControls.4.0.Generator, Version=1.24.5.0, Culture=neutral, PublicKeyToken=12a0c2a29e956d84, processorArchitecture=MSIL">
-      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.24.5\lib\net40\RM.Friendly.WPFStandardControls.4.0.Generator.dll</HintPath>
+    <Reference Include="RM.Friendly.WPFStandardControls.4.0.Generator, Version=1.25.0.0, Culture=neutral, PublicKeyToken=12a0c2a29e956d84, processorArchitecture=MSIL">
+      <HintPath>..\Scenario\packages\RM.Friendly.WPFStandardControls.1.25.0\lib\net40\RM.Friendly.WPFStandardControls.4.0.Generator.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
