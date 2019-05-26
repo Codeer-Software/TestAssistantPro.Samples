@@ -20,7 +20,7 @@ namespace Scenario
         public void TearDown() => _driver.Dispose();
 
         [TestCase]
-        public void Test()
+        public void TestScenario()
         {
             var topPage = _driver.AttachTopPage();
             topPage.to_demo.Invoke();
@@ -37,6 +37,23 @@ namespace Scenario
             movieEditPage.movie_genre.Edit("SF");
             movieEditPage.movie_price.Edit("2000");
             movieEditPage.to_save.Invoke();
+
+        }
+
+        [TestCase]
+        public void TestAll()
+        {
+            //TODO Controlsへ行くところ id が間違ってる。重複。
+            _driver.Url = "http://testassistantpro-demo.azurewebsites.net/AllControls";
+            var allControlsPage = _driver.AttachPageObject();
+            allControlsPage.textBoxName.Edit("abc");
+            allControlsPage.radioWoman.Edit();
+            allControlsPage.checkBoxCellPhone.Edit(true);
+            allControlsPage.checkBoxCar.Edit(true);
+            allControlsPage.checkBoxCottage.Edit(false);
+            allControlsPage.dropDownFruit.Edit("Banana");
+            allControlsPage.textareaFreeans.Edit("aaa");
+            allControlsPage.inputJS.Invoke();
         }
     }
 }
