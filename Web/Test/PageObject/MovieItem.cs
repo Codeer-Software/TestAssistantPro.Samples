@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using Selenium.StandardControls;
 using Selenium.StandardControls.PageObjectUtility;
-using Selenium.StandardControls.TestAssistant.GeneratorToolKit;
 
 namespace PageObject
 {

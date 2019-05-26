@@ -2,7 +2,6 @@
 using Selenium.StandardControls;
 using Selenium.StandardControls.PageObjectUtility;
 using Selenium.StandardControls.TestAssistant.GeneratorToolKit;
-using PageObject;
 
 namespace PageObject
 {

@@ -11,7 +11,7 @@ namespace PageObject
         public AnchorDriver to_movies => ById("to-movies");
         public AnchorDriver to_movies0 => ById("to-movies");
         public TextBoxDriver movie_title => ById("movie-title");
-        public TextBoxDriver movie_releasedate => ById("movie-releasedate");
+        public DateDriver movie_releasedate => ById("movie-releasedate");
         public TextBoxDriver movie_genre => ById("movie-genre");
         public TextBoxDriver movie_price => ById("movie-price");
         public ButtonDriver to_save => ById("to-save");
