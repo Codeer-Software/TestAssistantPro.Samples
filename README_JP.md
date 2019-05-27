@@ -8,8 +8,10 @@ Visual Studio Marketplace からダウンロード
 フレームワーク毎のサンプル
 -------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms/README_JP.md "Title")
-<br>
+
 [for WPF](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WPF/README_JP.md "Title")
+
+[for Web](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/Web/README_JP.md "Title")
 
 対応状況
 -------------
@@ -19,12 +21,14 @@ Visual Studio Marketplace からダウンロード
   <th align="center">Win32</th>
   <th align="center">WinForms</th>
   <th align="center">WPF</th>
+  <th align="center">Web</th>
 </tr>
 <tr>
   <td align="center">対応済み</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
   <td align="center">〇</td>
+  <td align="center">α</td>
 </tr>
 </table>
 
