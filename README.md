@@ -10,8 +10,10 @@ Download form Visual Studio Marketplace
 How to use samples
 -------------
 [for WinForms](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WinForms "Title")
-<br>
+
 [for WPF](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/WPF "Title")
+
+[for Web](https://github.com/Codeer-Software/TestAssistantPro.Samples/tree/master/Web "Title")
 
 Status
 -------------
@@ -21,12 +23,14 @@ Status
   <th align="center">Win32</th>
   <th align="center">WinForms</th>
   <th align="center">WPF</th>
+  <th align="center">Web</th>
 </tr>
 <tr>
   <td align="center">Status</td>
   <td align="center">○</td>
   <td align="center">○</td>
   <td align="center">○</td>
+  <td align="center">α</td>
 </tr>
 </table>
 
