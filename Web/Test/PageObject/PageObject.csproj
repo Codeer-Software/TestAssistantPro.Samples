@@ -57,11 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MovieDetailPage.cs" />
-    <Compile Include="MovieEditPage.cs" />
-    <Compile Include="MovieItem.cs" />
-    <Compile Include="MoviesPage.cs" />
-    <Compile Include="AllControlsPage.cs" />
+    <Compile Include="MovieCreatePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TopPage.cs" />
   </ItemGroup>
