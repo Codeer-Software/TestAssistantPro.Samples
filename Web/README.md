@@ -1,6 +1,8 @@
 # Web Sample
 It is a sample to experience TestAssistantPro in a web page.
 
+For Japanese: [日本語](https://github.com/Codeer-Software/TestAssistantPro.Samples/blob/master/Web/README_JP.md)
+
 Preparation
 --------------
 #### 1. Open Test.sln and build it.
