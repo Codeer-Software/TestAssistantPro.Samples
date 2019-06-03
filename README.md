@@ -3,6 +3,10 @@ It is a sample you can learn how to use TestAssistantPro.
 
 For Japanese: [日本語](https://github.com/Codeer-Software/TestAssistantPro.Samples/blob/master/README_JP.md)
 
+Introduction page is here
+-------------
+[Codeer/Test Assistant Pro](https://www.codeer.co.jp/Tools/TestAssistantPro "Title")
+
 Download form Visual Studio Marketplace  
 -------------
 [Test Assistant Pro](https://marketplace.visualstudio.com/items?itemName=Codeer.TestAssistantPro "Title")
