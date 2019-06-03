@@ -1,6 +1,10 @@
 # TestAssistantPro.Samples
 TestAssistantProを知るためのサンプルです。
 
+弊社HPはこちら
+-------------
+[Codeer/Test Assistant Pro](https://www.codeer.co.jp/Tools/TestAssistantPro "Title")
+
 Visual Studio Marketplace からダウンロード
 -------------
 [Test Assistant Pro](https://marketplace.visualstudio.com/items?itemName=Codeer.TestAssistantPro "Title")
