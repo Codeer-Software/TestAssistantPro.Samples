@@ -6,7 +6,9 @@ namespace DemoApp
     public partial class ScheduleControl : UserControl
     {
         public ScheduleControl()
-            => InitializeComponent();
+        {
+            InitializeComponent();
+        }
 
         private void _buttonAdd_Click(object sender, EventArgs e)
         {

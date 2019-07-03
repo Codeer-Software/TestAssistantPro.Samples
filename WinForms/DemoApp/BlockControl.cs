@@ -19,7 +19,7 @@ namespace DemoApp
 
         public int SelectedIndex
         {
-            get => _selectedIndex;
+            get { return _selectedIndex; }
             set
             {
                 if (_selectedIndex == value) return;

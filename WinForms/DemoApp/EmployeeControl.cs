@@ -4,6 +4,9 @@ namespace DemoApp
 {
     public partial class EmployeeControl : UserControl
     {
-        public EmployeeControl() => InitializeComponent();
+        public EmployeeControl()
+        {
+            InitializeComponent();
+        }
     }
 }
