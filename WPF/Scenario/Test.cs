@@ -2,7 +2,6 @@
 using System.IO;
 using Codeer.Friendly.Windows;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace Scenario
 {
@@ -25,7 +24,6 @@ namespace Scenario
         [TestMethod]
         public void CaptureDemo()
         {
-
         }
     }
 }
