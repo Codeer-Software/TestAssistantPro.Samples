@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Windows.Forms;
-using Codeer.Friendly;
+﻿using System.Diagnostics;
 using Codeer.Friendly.Windows;
 using Driver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
