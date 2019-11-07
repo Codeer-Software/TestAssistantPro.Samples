@@ -116,24 +116,8 @@ namespace Driver
                     return;
                 }
 
-                //終了させる
-                var workSpace = _app.AttachWorkspaceWindow();
-                var async = new Async();
-                workSpace.Ribbon.EmulateOpenApplicationMenu();
-                var close = workSpace.Ribbon.ApplicationMenu.GetButton("閉じる");
-                if ((bool)close.Dynamic().IsEnabled)
-                {
-                    close.EmulateClick(async);
-                    var msg = _app.AttachMessageBox(async);
-                    if (msg != null)
-                    {
-                        msg.Button_No.EmulateClick();
-                    }
-                }
-                else
-                {
-                    workSpace.Ribbon.EmulateCloseApplicationMenu();
-                }
+                _app.Kill();
+                _app = null;
             }
             catch
             {
