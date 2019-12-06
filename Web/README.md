@@ -29,9 +29,9 @@ Double-click an element in the tree to add it to the target list.
 
 You can also add to the operation target list by the following procedure.
 
-1. Hold down the Alt key.
+1. Hold down the Control key.
 2. Move the cursor to the target you want to operate on the browser
-3. Release the Alt key
+3. Release the Control key
 4. If the color of the object you want to operate has changed, double click
 
 ![AnalyzeTarget3.gif](Img/AnalyzeTarget3.gif)
