@@ -27,9 +27,9 @@ WebページでTestAssistantProを体験するためのサンプルです。
 
 また、次の手順でも操作対象リストへの追加が可能です。
 
-1. Altキーを押しっぱなしにする。
+1. Controlキーを押しっぱなしにする。
 2. ブラウザ上で操作したい対象にカーソルを合わせる
-3. Altキーを離す
+3. Controlキーを離す
 4. 操作したい対象の色が変わっていれば、ダブルクリックする
 
  ![AnalyzeTarget3.gif](Img/AnalyzeTarget3.gif)
