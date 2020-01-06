@@ -103,6 +103,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomDrivers\WPFNumericUpDownDriver.cs" />
     <Compile Include="NativeJPN\FolderDialogDriver.cs" />
     <Compile Include="NativeJPN\MessageBoxDriver.cs" />
     <Compile Include="NativeJPN\OpenFileDialogDriver.cs" />
@@ -121,7 +122,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CustomDrivers\" />
     <Folder Include="DemoApp\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
