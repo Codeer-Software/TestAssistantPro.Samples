@@ -61,6 +61,8 @@ CustomControlドライバを作成する方法は3つあります。
 
 3つ目の方法は、そのコントロール用のドライバを自分で作成することです。
 1番目と2番目に比べて、作成コストは高くなりますが、最も保守性が高く、希望する操作を確実に実行できる、高品質のドライバを作成できます。
+TestAssistantProを使うことによりひな形を作成してから中身を自身で実装することができます。
+![CustomControlDriverCreate2.gif](Img/CustomControlDriverCreate3.gif)
 
 *Source code WPFNumericUpDown.cs*
 ```csharp
@@ -435,3 +437,123 @@ Win32コントロールのドライバを生成することは可能です。
  
 *Capture and operation for OpenFileDialog.*
  ![CaptureOpenFileDialog.gif](Img/CaptureOpenFileDialog.gif)
+
+## 9. WindowDriverの検索ルール
+TestAssistantProはUserControlDriverをWindowDriverIdentifyAttributeが設定されているstaticメソッドを実行することによって見つけます。
+
+* TypeFullNameから検索
+```csharp
+[WindowDriverIdentify(TypeFullName = "XXX.WindowX")]
+public static WindowXDriver AttachWorkspaceWindow(this WindowsAppFriend app)
+    => new WindowXDriver(app.WaitForIdentifyFromTypeFullName("XXX.WindowX"));
+```
+.Netの型のフルネームから検索します。
+
+* WindowTextから検索
+```csharp
+[WindowDriverIdentify(WindowText = "XXX-Title")]
+public static WindowXDriver AttachWorkspaceWindow(this WindowsAppFriend app)
+    => new WindowXDriver(app.WaitForIdentifyFromWindowText("XXX.WindowX"));
+```
+Windowのテキストから検索します。
+これはWin32APIのGetWindowText関数で取得される文字列です。
+
+* WindowClassから検索
+```csharp
+[WindowDriverIdentify(TypeFullName = "XXX.WindowX")]
+public static WindowXDriver AttachWorkspaceWindow(this WindowsAppFriend app)
+    => new WindowXDriver(app.WaitForIdentifyFromWindowClass("XXX.WindowX"));
+```
+WindowClassから検索します。
+これはWin32APIのGetClassName関数で取得される文字列です。
+
+* CustomMethodを使って検索
+```csharp
+[WindowDriverIdentify(CustomMethod = "TryAttach")]
+public static FolderDialogDriver AttachDlgFolder(this WindowsAppFriend app, string text)
+    => new FolderDialogDriver(WindowControl.WaitForIdentifyFromWindowText(app, text));
+
+public static bool TryAttach(WindowControl window, out string title)
+{
+    title = null;
+    if (window.GetFromWindowClass("SysTreeView32").Length != 1 ||
+    window.GetFromWindowText("OK").Length != 1 ||
+    window.GetFromWindowText("Cancel").Length != 1) return false;
+    title = window.GetWindowText();
+    return true;
+}
+```
+CustomMethodを利用して得た情報をもとに取得します。
+最初にCustomMethodが呼び出されます。
+渡ってきたWindowControlがドライバの操作対象のWindowであるならtrueを返します。
+特定するための取得情報が必要なら第二引数で返します。
+ここで返した取得情報はWindowDriverIdentifyAttributeが設定されているメソッドの第二引数に渡されます。
+取得情報が必要無ければ第二引数は省略することができます。
+
+## 10. UserControlDriverの検索ルール
+TestAssistantProはUserControlDriverを次のルールで見つけます。
+- WindowDriverのプロパティ
+- UserControlDriverのプロパティ
+- UserControlDriverIdentifyAttributeが設定されているstaticメソッドの実行
+
+UserControlDriverIdentifyAttributeは以下3パターンで利用できます。
+
+* Windowの中から検索 
+```csharp
+[UserControlDriverIdentify]
+public static UserControlADriver Attach_UserControlADriver(this WindowDriverX window)
+    => window.Core.VisualTree().ByType("XXX.UserControlA").SingleOrDefault().Dynamic()
+```
+指定のWindowDriverの持つWindowから検索して取得できます。
+nullを返すと無視されます。
+取得に失敗して例外を投げても無視されます。
+
+* アプリケーションの中から検索
+```csharp
+[UserControlDriverIdentify]
+public static UserControlADriver Attach_UserControlADriver(this WindowsAppFriend app)
+{
+    var hit = app.GetTopLevelWindows().Select(e=>e.VisualTree().ByType("XXX.UserControlA").SingleOrDefault()).Where(e=> !e.IsNull).FirstOrDefault();
+    return hit == null ? null : hit.Dynamic();
+} 
+```
+対象のアプリケーション全体から検索して取得できます。
+nullを返すと無視されます。
+取得に失敗して例外を投げても無視されます。
+
+* Windowの中から検索 (CustomMethod)
+```csharp
+[UserControlDriverIdentify(CustomMethod = "Try")]
+public static UserControlADriver Attach_UserControlADriver(this WindowDriverX window, int index)
+    => window.Core.VisualTree().ByType("XXX.UserControlA")[index].Dynamic();
+
+public static void Try(WindowDriverX window, out int[] indices)
+{
+    var count = window.Core.VisualTree().ByType("XXX.UserControlA").Count;
+    indices = Enumerable.Range(0, count).ToArray();
+}
+```
+CustomMethodを利用して得た情報をもとに取得します。
+探す起点となるのは第一引数で指定したWindowDriverの持つWindowです。
+取得に失敗して例外を投げても無視されますが、基本的にはCustomMethodで一度取得しているのでここで取得に失敗することはありません。
+最初にCustomMethodが呼び出されます。そこで作られた取得情報(第二引数)をもとにUserControlDriverIdentifyの設定されたメソッドを呼び出します。
+取得情報は配列である必要があります。型は自由に決めることができます。
+
+* アプリケーションの中から検索 (CustomMethod)
+```csharp
+[UserControlDriverIdentify(CustomMethod = "Try")]
+public static UserControlADriver Attach_UserControlADriver(this WindowsAppFriend app, int index)
+    => app.GetTopLevelWindows().Select(e=>e.VisualTree().ByType("XXX.UserControlA").SingleOrDefault()).Where(e=> !e.IsNull).[index].Dynamic();
+
+public static void Try(WindowsAppFriend app, out int[] indices)
+{
+    var count = app.GetTopLevelWindows().Select(e=>e.VisualTree().ByType("XXX.UserControlA").SingleOrDefault()).Where(e=> !e.IsNull).Count;
+    indices = Enumerable.Range(0, count).ToArray();
+}
+```
+CustomMethodを利用して得た情報をもとに取得します。
+探す起点となるのはWindowsAppFriendです。
+取得に失敗して例外を投げても無視されますが、基本的にはCustomMethodで一度取得しているのでここで取得に失敗することはありません。
+最初にCustomMethodが呼び出されます。そこで作られた取得情報(第二引数)をもとにUserControlDriverIdentifyAttributeの設定されたメソッドを呼び出します。
+取得情報は配列である必要があります。型は自由に決めることができます。
+
